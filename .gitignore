@@ -38,6 +38,7 @@ projects/SkillIssuePack/Resources
 *.exe
 *.out
 *.app
-
-
-*.bat
+BuildDolphinPack.bat
+BuildMyPack.bat
+BuildLoader.bat
+BuildTesting.bat
