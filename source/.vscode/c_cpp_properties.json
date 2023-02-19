@@ -1,0 +1,38 @@
+{
+    "configurations": [
+        {
+            "name": "Win32",
+            "includePath": [
+                "${workspaceFolder}/***",
+                "D:/Modding/Coding/Kamek/source",
+                "D:/Modding/Coding/Kamek/engine"
+            ],
+            "defines": [
+                "_DEBUG",
+                "UNICODE",
+                "_UNICODE"
+            ],
+            "windowsSdkVersion": "10.0.19041.0",
+            "cStandard": "c17",
+            "cppStandard": "c++14",
+            "intelliSenseMode": "windows-msvc-x64",
+            "compilerPath": "cl.exe"
+        },
+        {
+            "name": "source",
+            "includePath": [
+                "${workspaceFolder}/**",
+                "${workspaceFolder}/**",
+                "D:/Modding/Coding/Kamek/source",
+                "D:/Modding/Coding/Kamek/engine"
+            ],
+            "defines": [
+                "_DEBUG",
+                "UNICODE",
+                "_UNICODE"
+            ],
+            "intelliSenseMode": "windows-msvc-x64"
+        }
+    ],
+    "version": 4
+}
