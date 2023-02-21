@@ -968,6 +968,7 @@ SetItem__15PlayerInventoryF6ItemIdUc = 0x807bc940
 
 #Network
 sInstance__15RKNetController = 0x809c20d8
+Copy__12PacketHolderFPvUi = 0x8065a34c
 SetPlayerData__18RKNetSELECTHandlerF11CharacterId9kartId8CourseIdUcUc = 0x80660750
 DecideTrack__18RKNetSELECTHandlerFv = 0x80661ce8
 GetWinningCourse__18RKNetSELECTHandlerCFv = 0x80660450

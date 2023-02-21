@@ -32,8 +32,8 @@ void BattleGlitchEnable(){
 static SettingsHook BattleGlitch(BattleGlitchEnable);
 
 //Mega TC
-void MegaTC(KartMovement *Movement){
-    Movement->ActivateMega();
+void MegaTC(KartMovement *movement){
+    movement->ActivateMega();
 }
 kmCall(0x80580630, MegaTC);
 

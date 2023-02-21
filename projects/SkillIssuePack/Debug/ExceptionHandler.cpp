@@ -13,7 +13,13 @@ void LaunchSoftware(){ //If dolphin, restarts game, else launches Riivo->HBC->OH
         SystemManager::RestartGame();
         return;
     }
-    result = SIP::Open("/title/00010001/4c554c5a/content/title.tmd\0", IOS::MODE_NONE);
+    result = SIP::Open("/title/00010001/52494956/content/title.tmd\0", IOS::MODE_NONE); //Riivo
+    if (result >= 0){
+        ISFS::Close(result);
+        OSLaunchTitle(0x00010001, 0x52494956);
+        return;
+    }
+    result = SIP::Open("/title/00010001/4c554c5a/content/title.tmd\0", IOS::MODE_NONE); //OHBC
     if (result >= 0){
         ISFS::Close(result);
         OSLaunchTitle(0x00010001, 0x4c554c5a);

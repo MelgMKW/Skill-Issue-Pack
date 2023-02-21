@@ -1,6 +1,7 @@
 #include <kamek.hpp>
 #include <game/Network/RKNetController.hpp>
 #include <game/Network/RKNetSelect.hpp>
+#include <game/Network/RKNetPlayerInfo.hpp>
 #include <game/System/random.hpp>
 #include <SkillIssuePack.hpp>
 #include <UserData/SIPData.hpp>
@@ -73,6 +74,48 @@ CourseId SetCorrectTrack(RKNetSELECTHandler *select){
     return id;
 }
 kmCall(0x80650ea8, SetCorrectTrack);
+
+//Fixes for spectating
+void CorrectRH1(PacketHolder *packetHolder, RACEHEADER1Packet *rh1Packet, u32 len){
+    rh1Packet->trackId = (u8) SIP::winningCourse;
+    packetHolder->Copy(rh1Packet, len);
+}
+kmCall(0x80655458, CorrectRH1);
+kmCall(0x806550e4, CorrectRH1);
+
+CourseId ReturnCorrectId(RKNetRH1Handler *rh1Handler){
+    for(int i = 0; i<12; i++){
+        RH1Data *curRH1 = &rh1Handler->rh1Data[i];
+        if(curRH1->trackId != 0x42 && curRH1->trackId != 0x43 && curRH1->trackId != 0xff && curRH1->timer != 0){
+            SIP::winningCourse = curRH1->trackId;
+            return GetCorrectTrackSlot();
+        }
+    }
+    return (CourseId) -1;
+}
+kmBranch(0x80664560, ReturnCorrectId);
+kmWrite32(0x80663f2c, 0x280500fe);
+kmWrite32(0x80663f54, 0x280500fe);
+kmWrite32(0x80663f80, 0x280500fe);
+kmWrite32(0x80663fa8, 0x280500fe);
+kmWrite32(0x80663fd4, 0x280500fe);
+kmWrite32(0x80663ffc, 0x280500fe);
+kmWrite32(0x80664028, 0x280500fe);
+kmWrite32(0x80664050, 0x280500fe);
+kmWrite32(0x80664250, 0x280500fe);
+kmWrite32(0x80664278, 0x280500fe);
+kmWrite32(0x806642a4, 0x280500fe);
+kmWrite32(0x806642cc, 0x280500fe);
+kmWrite32(0x806642f8, 0x280500fe);
+kmWrite32(0x80664320, 0x280500fe);
+kmWrite32(0x8066434c, 0x280500fe);
+kmWrite32(0x80664374, 0x280500fe);
+
+kmWrite32(0x80664b50, 0x280400fe);
+kmWrite32(0x80664b88, 0x280400fe);
+kmWrite32(0x80664bc0, 0x280400fe);
+kmWrite32(0x80664bf8, 0x280400fe);
+
 
 //Bunch of patches related to "usual" IDs not going over 0x43
 kmWrite32(0x80644338, 0x2C03FFFF);
