@@ -755,6 +755,8 @@ UpdateText__Q25Pages9CupSelectFP20CtrlMenuCupSelectCup = 0x80841614
 GetPageById__Q25Pages9CupSelectF6PageId = 0x80840dec
 LoadNextPage__Q25Pages9CupSelectFP20CtrlMenuCupSelectCupP10PushButtonUi = 0x80841744
 UpdateTrackList__23CtrlMenuCupSelectCourseFUi = 0x807e5ff0
+OnBackPress__Q25Pages9CupSelectFUi = 0x80841b54
+
 
 #course select
 UpdateBottomText__Q25Pages12CourseSelectFP26CtrlMenuCourseSelectCourseP10PushButtonUi = 0x80840728
@@ -848,6 +850,7 @@ OnWatchReplayPress__Q25Pages11GhostSelectFP10PushButtonUi = 0x8063a3c0
 OnRightArrowPress__Q25Pages11GhostSelectFP18SheetSelectControlUi = 0x8063a1a4
 OnLeftArrowPress__Q25Pages11GhostSelectFP18SheetSelectControlUi = 0x8063a2a4
 OnBackPress__Q25Pages11GhostSelectFUi = 0x8063a444
+Select__Q218SheetSelectControl17SheetSelectButtonFUi = 0x806371ac
 
 #VSSettingsPage
 __ct__Q25Pages10VSSettingsFv = 0x806284c8

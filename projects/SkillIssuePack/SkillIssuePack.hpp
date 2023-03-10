@@ -122,6 +122,7 @@ const u8 extSlotToMusicSlot[CUPCOUNT][4] = {
 };
 
 const u32 CRC32Array[TRACKCOUNT] = {
+
     0xdcbf28b3, //0
     0xe810f9d6, //1
     0x91ff7bed, //2

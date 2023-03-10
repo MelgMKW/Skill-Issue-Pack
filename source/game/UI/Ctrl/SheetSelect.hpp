@@ -7,6 +7,7 @@
 class SheetSelectControl : public UIControl { //arrowpair
 public:
     class SheetSelectButton : public LayoutUIControl { //select is equivalent to clicking for these
+    public:
         SheetSelectButton(); //inlined but at 80636470
         ~SheetSelectButton() override; //0x80636564 vtable 0x808be998
         void Init() override; //0xc 806367f8 
@@ -19,6 +20,7 @@ public:
         void AfterSelect(u32 hudSlotId); //806371ac
         void SetEnabledHudSlots(u32 playerBitField); //80636c2c
         void Toggle(bool enabled); //80636c48
+        void Select(u32 hudSlotId); //806371ac
         static void Trigger2APtmf(PtmfHolder_2A<LayoutUIControl, void, u32, u32> *handler, u32 hudSlotId, u32 childId); //806374b8
         SheetSelectControl *GetParentControl() const; //80636c6c
         ControlManipulator manipulator;
@@ -53,8 +55,8 @@ public:
     PtmfHolder_2A<LayoutUIControl, void, u32, u32> *leftArrowHandler; //0x9C
     u32 localPlayerBitfield;
     u8 unknown_0xA4[0xa8-0xa4];
-    SheetSelectButton leftArrow; //0xa8
-    SheetSelectButton rightArrow;
+    SheetSelectButton rightArrow; //0xa8
+    SheetSelectButton leftArrow;
 }; //total size 0x538
 static_assert(sizeof(SheetSelectControl) == 0x538,"SheetSelectControl");
 static_assert(sizeof(SheetSelectControl::SheetSelectButton) == 0x248,"SheetSelectButton");

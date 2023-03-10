@@ -31,6 +31,13 @@ struct RGBA16{
   u16 red, green, blue, alpha; 
 };
 
+template<typename T>
+inline T Min(T a, T b){return a < b ? a : b;}
+template<typename T>
+inline T Max(T a, T b){return a > b ? a : b;}
+
+#define abs __abs
+
 #define foreach(item, array, length) \
 for(decltype(&array[0]) ite = (&array[0]), (item) = ite; ite < (&(array)[length]); ite++, (item) = ite)
 
@@ -41,6 +48,8 @@ for(decltype(&array[0]) ite = (&array[0]), (item) = ite; ite < (&(array)[length]
 #define ASM(...)
 #define asm 
 #define __attribute(...)
+#define __abs(n) n
+
 #define __sync(...)
 #define __isync(...)
 #define static_assert static_assert

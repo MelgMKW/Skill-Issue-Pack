@@ -11,7 +11,7 @@ extern u32 lastSelectedCup;
 extern u32 lastSelectedButtonIdx;
 extern u32 selectedCourse;
 CourseId GetCorrectTrackSlot();
-
+void SaveSelectedCourse(PushButton *button);
 
 
 #endif
