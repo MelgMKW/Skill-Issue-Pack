@@ -2,9 +2,12 @@
 *.d
 /cw
 /.vscode
-projects/
 releases/
 main/
+projects/DolphinPack
+projects/MyPack
+projects/testing
+projects/SkillIssuePack/Resources
 
 # Compiled Object files
 *.slo
@@ -35,6 +38,7 @@ main/
 *.exe
 *.out
 *.app
-
-
-*.bat
+BuildDolphinPack.bat
+BuildMyPack.bat
+BuildLoader.bat
+BuildTesting.bat

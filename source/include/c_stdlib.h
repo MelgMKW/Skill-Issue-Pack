@@ -1,6 +1,5 @@
 #ifndef __C_STDLIB_H
 #define __C_STDLIB_H
-#define abs(n) __abs(n)
 
 #ifdef __cplusplus
 extern "C" {

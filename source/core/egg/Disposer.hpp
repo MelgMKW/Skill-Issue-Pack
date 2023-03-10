@@ -15,6 +15,7 @@ class Disposer { //a way to garbage collect objects when a heap is destroyed
         Heap *heap;
         nw4r::ut::LinkListNode link; //the heap traverses the link list on destruction and calls all the dtors
 }; // Total size 0x10
+
 template<class T>
 class TDisposer : public Disposer{
 public:
