@@ -7,8 +7,7 @@ main/
 projects/DolphinPack
 projects/MyPack
 projects/testing
-projects/SkillIssuePack/Resources
-
+projects/SkillIssuePack
 # Compiled Object files
 *.slo
 *.lo
